@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import styled, { css } from "styled-components";
 
 const sizes = {
@@ -49,7 +48,7 @@ const variations = {
   `,
 };
 
-export const Button = styled.button`
+const Button = styled.button`
   border: none;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
@@ -59,7 +58,7 @@ export const Button = styled.button`
 `;
 
 Button.defaultProps = {
-  variaton: "primary",
+  variation: "primary",
   size: "medium",
 };
 
