@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { PAGE_SIZE } from "../../utils/constants";
 
 export function useBookings() {
-  // filtering
+  // filtering (api side)
   const [searchParams] = useSearchParams();
   const queryclient = useQueryClient();
   const filterValue = searchParams.get("status");
@@ -14,7 +14,7 @@ export function useBookings() {
       ? null
       : { field: "status", value: filterValue, method: "eq" };
 
-  // sorting
+  // sorting (api side)
   const [field, direction] = (
     searchParams.get("sortBy") || "startDate-desc"
   ).split("-");
