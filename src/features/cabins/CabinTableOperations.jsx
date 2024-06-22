@@ -50,11 +50,11 @@ export default function CabinTableOperations() {
           },
           {
             value: "created_at-asc",
-            label: "Sort by start date (low)",
+            label: "Sort by creation date (low)",
           },
           {
             value: "created_at-desc",
-            label: "Sort by start date (high)",
+            label: "Sort by creation date (high)",
           },
         ]}
       />

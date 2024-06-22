@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiEllipsisVertical } from "react-icons/hi2";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import useOutsideClick from "../hooks/useOutsideClick";
 
 const StyledMenu = styled.div`
@@ -22,7 +22,23 @@ const StyledToggle = styled.button`
 
   &:hover {
     background-color: var(--color-grey-100);
+
+    ${(props) =>
+      props.active &&
+      css`
+        background-color: var(--color-grey-200);
+      `}
   }
+
+  &:focus {
+    outline-color: var(--color-grey-300);
+  }
+
+  ${(props) =>
+    props.active &&
+    css`
+      background-color: var(--color-grey-200);
+    `}
 
   & svg {
     width: 2.4rem;
@@ -93,11 +109,15 @@ function Toggle({ id }) {
       y: rect.y + rect.height + 8,
     });
 
-    openId === "" || openId !== id ? open(id) : close();
+    if (openId === "" || openId !== id) open(id);
+    else {
+      console.log("closing");
+      close();
+    }
   }
 
   return (
-    <StyledToggle onClick={handleClick}>
+    <StyledToggle active={openId === id} onClick={handleClick}>
       <HiEllipsisVertical />
     </StyledToggle>
   );
