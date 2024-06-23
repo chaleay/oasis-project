@@ -1,10 +1,13 @@
 import { useForm } from "react-hook-form";
+import { useSignup } from "./useSignup";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import SpinnerMini from "../../ui/SpinnerMini";
-import { useSignup } from "./useSignup";
+import { DEMO_VERSION } from "../../utils/constants";
+import toast from "react-hot-toast";
+import { IoMdReturnLeft } from "react-icons/io";
 
 // Email regex: /\S+@\S+\.\S+/
 function SignupForm() {
@@ -13,6 +16,10 @@ function SignupForm() {
   const { errors } = formState;
 
   function onSubmit({ fullName, email, password }) {
+    if (DEMO_VERSION) {
+      toast.error("User creation is disabled in demo version");
+      return;
+    }
     signup(
       { fullName, email, password },
       {
