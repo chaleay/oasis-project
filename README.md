@@ -12,7 +12,7 @@ Key features include:
 
 ## Technologies
 
-Under the hood, Solace uses Vite + Vanilla React, and it uses React Query as its state management solution. Solace uses Supabase as its database and bucket storage solution.
+Under the hood, Solace uses Vite + Vanilla React, styled-components for styling, and React Query as its state management solution. Solace uses Supabase as its database and bucket storage solution.
 
 ## Demo
 
