@@ -13,9 +13,14 @@ const StyledHeader = styled.header`
   justify-content: flex-end;
 `;
 
+// const StyledP = styled.p`
+//   font-weight: 600;
+// `;
+
 export default function Header() {
   return (
     <StyledHeader>
+      {/* <StyledP>Demo</StyledP> */}
       <UserAvatar />
       <HeaderMenu />
     </StyledHeader>
