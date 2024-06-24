@@ -23,7 +23,7 @@ function Login() {
   return (
     <LoginLayout>
       <Logo />
-      <LogoHeader>Solace</LogoHeader>
+      <LogoHeader>Solace (DEMO)</LogoHeader>
       <Heading as="h4">Log in</Heading>
       <LoginForm />
     </LoginLayout>
