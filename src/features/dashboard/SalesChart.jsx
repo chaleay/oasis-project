@@ -55,8 +55,6 @@ const StyledSalesChart = styled(DashboardBox)`
 //   { label: "Feb 06", totalSales: 1450, extrasSales: 400 },
 // ];
 
-const isDarkMode = true;
-
 export default function StylesChart({ bookings, numDays }) {
   const { isDarkMode } = useDarkMode();
 

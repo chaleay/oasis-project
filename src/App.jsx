@@ -31,7 +31,7 @@ function App() {
     <>
       <DarkModeProvider>
         <QueryClientProvider client={queryClient}>
-          <ReactQueryDevtools initialIsOpen />
+          <ReactQueryDevtools />
           <GlobalStyles />
           <BrowserRouter>
             <Routes>

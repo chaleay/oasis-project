@@ -13,6 +13,7 @@ const FullPage = styled.div`
 `;
 
 export default function ProtectedRoute({ children }) {
+  console.log("protected");
   const navigate = useNavigate();
   // get user from react-query
   const { isLoading, isAuthenticated } = useUser();

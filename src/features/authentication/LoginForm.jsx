@@ -5,13 +5,11 @@ import Form from "../../ui/Form";
 import Input from "../../ui/Input";
 import SpinnerMini from "../../ui/SpinnerMini";
 import FormRowVertical from "../../ui/FormRowVertical";
-import { useDarkMode } from "../../context/DarkModeContext";
 
 function LoginForm() {
   const [email, setEmail] = useState("test@lococoder.com");
   const [password, setPassword] = useState("testtesttest");
   const { login, isLoggingIn } = useLogin();
-  const { isDarkMode } = useDarkMode();
 
   function handleSubmit(e) {
     e.preventDefault();
