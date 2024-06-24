@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { DEMO_VERSION } from "../../utils/constants";
 
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
@@ -8,8 +9,11 @@ import Input from "../../ui/Input";
 
 import { useUser } from "./useUser";
 import { useUpdateUser } from "./useUpdateUser";
+import { useDarkMode } from "../../context/DarkModeContext";
+import toast from "react-hot-toast";
 
 function UpdateUserDataForm() {
+  const { isDarkMode } = useDarkMode();
   // We don't need the loading state, and can immediately use the user data, because we know that it has already been loaded at this point
   const {
     user: {
@@ -24,6 +28,10 @@ function UpdateUserDataForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (DEMO_VERSION) {
+      toast.error("User update is disabled in demo version");
+      return;
+    }
     if (!fullName) return;
     updateUser(
       { fullName, avatar },
@@ -57,6 +65,7 @@ function UpdateUserDataForm() {
       </FormRow>
       <FormRow label="Avatar image">
         <FileInput
+          darkMode={isDarkMode}
           disabled={isUpdating}
           id="avatar"
           accept="image/*"

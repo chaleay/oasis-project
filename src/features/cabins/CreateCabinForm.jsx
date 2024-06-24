@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+import { DEMO_VERSION } from "../../utils/constants";
 import { useForm } from "react-hook-form";
 import Input from "../../ui/Input";
 import Form from "../../ui/Form";
@@ -10,6 +11,7 @@ import FormRow from "../../ui/FormRow";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { useCreateCabin } from "./useCreateCabin";
 import { useEditCabin } from "./useEditCabin";
+import toast from "react-hot-toast";
 
 function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { isCreating, createCabin } = useCreateCabin();
@@ -28,6 +30,10 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   } = useForm({ defaultValues: isEditSession ? editValues : {} });
 
   function onSubmit(data) {
+    if (DEMO_VERSION) {
+      toast.error("Cabin Creation is disabled in demo version");
+      return;
+    }
     console.log(data);
     const image = typeof data.image === "string" ? data.image : data.image[0];
 

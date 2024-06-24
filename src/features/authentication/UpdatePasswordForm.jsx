@@ -1,10 +1,11 @@
+import { DEMO_VERSION } from "../../utils/constants";
 import { useForm } from "react-hook-form";
+import { useUpdateUser } from "./useUpdateUser";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
-
-import { useUpdateUser } from "./useUpdateUser";
+import toast from "react-hot-toast";
 
 function UpdatePasswordForm() {
   const { register, handleSubmit, formState, getValues, reset } = useForm();
@@ -13,6 +14,10 @@ function UpdatePasswordForm() {
   const { updateUser, isUpdating } = useUpdateUser();
 
   function onSubmit({ password }) {
+    if (DEMO_VERSION) {
+      toast.error("User update is disabled in demo version");
+      return;
+    }
     updateUser({ password }, { onSuccess: reset });
   }
 
