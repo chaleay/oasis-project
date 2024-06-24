@@ -3,7 +3,6 @@ import Tag from "../../ui/Tag";
 import Button from "../../ui/Button";
 import { Flag } from "../../ui/Flag";
 import { Link } from "react-router-dom";
-import CheckoutButtion from "./CheckoutButton";
 import CheckoutButton from "./CheckoutButton";
 
 const StyledTodayItem = styled.li`

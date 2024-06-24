@@ -1,8 +1,13 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const FileInput = styled.input.attrs({ type: "file" })`
   font-size: 1.4rem;
   border-radius: var(--border-radius-sm);
+  ${(props) =>
+    props.darkMode &&
+    css`
+      color: white !important;
+    `}
 
   &::file-selector-button {
     font: inherit;

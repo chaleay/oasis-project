@@ -76,6 +76,10 @@ const GlobalStyles = createGlobalStyle`
   --image-grayscale: 10%;
   --image-opacity: 90%;
 
+  input {
+    color: black;
+  }
+
   } 
 
    /* Indigo */

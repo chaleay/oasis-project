@@ -5,9 +5,8 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import SpinnerMini from "../../ui/SpinnerMini";
-import { DEMO_VERSION } from "../../utils/constants";
 import toast from "react-hot-toast";
-import { IoMdReturnLeft } from "react-icons/io";
+import { DEMO_VERSION } from "../../utils/constants";
 
 // Email regex: /\S+@\S+\.\S+/
 function SignupForm() {

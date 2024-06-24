@@ -20,7 +20,8 @@ export default function Sidebar() {
       <Logo />
       <MainNav />
 
-      <Uploader />
+      {/* for testing */}
+      {/* <Uploader /> */}
     </StyledSidebar>
   );
 }

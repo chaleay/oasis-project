@@ -13,10 +13,17 @@ const LoginLayout = styled.main`
   background-color: var(--color-grey-50);
 `;
 
+const LogoHeader = styled.h1`
+  text-align: center;
+  text-shadow: 6px 2px 10px rgba(207, 207, 155, 0.89);
+  font-size: 4rem;
+`;
+
 function Login() {
   return (
     <LoginLayout>
       <Logo />
+      <LogoHeader>Solace</LogoHeader>
       <Heading as="h4">Log in</Heading>
       <LoginForm />
     </LoginLayout>

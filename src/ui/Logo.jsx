@@ -15,9 +15,9 @@ function Logo() {
   return (
     <StyledLogo>
       {isDarkMode ? (
-        <Img src="/logo-dark.png" alt="Logo" />
+        <Img src="/solace-logo-dark.png" alt="Logo" />
       ) : (
-        <Img src="/logo-light.png" alt="Logo" />
+        <Img src="/solace-logo-light.png" alt="Logo" />
       )}
     </StyledLogo>
   );

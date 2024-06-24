@@ -6,6 +6,7 @@ function useOutsideClick(handler, listenCapturing = true) {
   useEffect(
     function () {
       function handleClick(e) {
+        // verify if the user clicked on the current ref (element)
         if (ref.current && !ref.current.contains(e.target)) {
           console.log("You clicked:", e.target);
           handler();

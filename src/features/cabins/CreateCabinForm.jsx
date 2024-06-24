@@ -7,6 +7,7 @@ import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
+import { useDarkMode } from "../../context/DarkModeContext";
 import { useCreateCabin } from "./useCreateCabin";
 import { useEditCabin } from "./useEditCabin";
 
@@ -16,6 +17,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const isWorking = isEditing || isCreating;
   const { id: editId, ...editValues } = cabinToEdit;
   const isEditSession = Boolean(editId);
+  const { isDarkMode } = useDarkMode();
 
   const {
     register,
@@ -124,6 +126,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
 
       <FormRow label="Cabin photo" error={errors?.image?.message}>
         <FileInput
+          darkMode={isDarkMode}
           id="image"
           accept="image/*"
           {...register("image", {
