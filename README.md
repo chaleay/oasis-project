@@ -1,8 +1,19 @@
-# React + Vite
+# Solace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+Solace is a solution for seamless hotel management. Solace makes it easier than ever to manage reservations, onboard new employees, and oversee day-to-day operations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key features include:
+
+- Reservation Management: From individual bookings to group reservations, manage everthing with ease and ensure a smooth experience for your guests
+- Employee Onboarding: Streamline the onboarding process for new employees. Our CMS provides tools and resources to help new staff get up to speed quickly, ensuring they are ready to deliver exceptional service from day one.
+- Operational Efficiency: Oversee daily operations with a comprehensive suite of management tools.
+
+## Technologies
+
+Under the hood, Solace uses Vite + Vanilla React, and it uses React Query as its state management solution. Solace uses Supabase as its database and bucket storage solution.
+
+## Demo
+
+Link
